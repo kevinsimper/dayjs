@@ -1,17 +1,17 @@
 {
-  "name": "dayjs",
-  "version": "0.0.0-development",
-  "description": "2KB immutable date time library alternative to Moment.js with the same modern API ",
+  "name": "dayjs-es",
+  "version": "1.0.0",
+  "description": "dayjs exported as ES modules to use in the browser with native module loading.",
   "main": "dayjs.min.js",
   "types": "index.d.ts",
-  "module": "dayjs.min.js",
+  "module": "esm/index.js",
   "scripts": {
     "test": "TZ=Pacific/Auckland npm run test-tz && TZ=Europe/London npm run test-tz && TZ=America/Whitehorse npm run test-tz && npm run test-tz && jest",
     "test-tz": "date && jest test/timezone.test --coverage=false",
     "lint": "./node_modules/.bin/eslint src/* test/* build/*",
     "prettier": "prettier --write \"docs/**/*.md\"",
     "babel": "cross-env BABEL_ENV=build babel src --out-dir esm --copy-files && node build/esm",
-    "build": "cross-env BABEL_ENV=build node build && npm run size",
+    "build": "cross-env BABEL_ENV=build node build && npm run size && npm run babel",
     "sauce": "npx karma start karma.sauce.conf.js",
     "test:sauce": "npm run sauce -- 0 && npm run sauce -- 1 && npm run sauce -- 2  && npm run sauce -- 3",
     "size": "size-limit && gzip-size dayjs.min.js"

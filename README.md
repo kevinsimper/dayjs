@@ -1,3 +1,13 @@
+# dayjs-es
+
+```
+npm install dayjs-es
+```
+
+This is a fork that publishes dayjs as a proper ES Module with `module:`. https://github.com/iamkun/dayjs/pull/612
+
+---
+
 English | [简体中文](./docs/zh-cn/README.zh-CN.md) | [日本語](./docs/ja/README-ja.md) | [Português Brasileiro](./docs/pt-br/README-pt-br.md) | [한국어](./docs/ko/README-ko.md) | [Español (España)](./docs/es-es/README-es-es.md)
 
 <p align="center"><a href="#" target="_blank" rel="noopener noreferrer"><img width="550"
@@ -26,15 +36,19 @@ English | [简体中文](./docs/zh-cn/README.zh-CN.md) | [日本語](./docs/ja/R
 > Day.js is a minimalist JavaScript library that parses, validates, manipulates, and displays dates and times for modern browsers with a largely Moment.js-compatible API. If you use Moment.js, you already know how to use Day.js.
 
 ```js
-dayjs().startOf('month').add(1, 'day').set('year', 2018).format('YYYY-MM-DD HH:mm:ss');
+dayjs()
+  .startOf('month')
+  .add(1, 'day')
+  .set('year', 2018)
+  .format('YYYY-MM-DD HH:mm:ss')
 ```
 
-* 🕒 Familiar Moment.js API & patterns
-* 💪 Immutable
-* 🔥 Chainable
-* 🌐 I18n support
-* 📦 2kb mini library
-* 👫 All browsers supported
+- 🕒 Familiar Moment.js API & patterns
+- 💪 Immutable
+- 🔥 Chainable
+- 🌐 I18n support
+- 📦 2kb mini library
+- 👫 All browsers supported
 
 ---
 
@@ -57,7 +71,9 @@ dayjs('2018-08-08') // parse
 
 dayjs().format('{YYYY} MM-DDTHH:mm:ss SSS [Z] A') // display
 
-dayjs().set('month', 3).month() // get & set
+dayjs()
+  .set('month', 3)
+  .month() // get & set
 
 dayjs().add(1, 'year') // manipulate
 
@@ -77,8 +93,11 @@ import 'dayjs/locale/es' // load on demand
 
 dayjs.locale('es') // use Spanish locale globally
 
-dayjs('2018-05-05').locale('zh-cn').format() // use Chinese Simplified locale in a specific instance
+dayjs('2018-05-05')
+  .locale('zh-cn')
+  .format() // use Chinese Simplified locale in a specific instance
 ```
+
 📚[Internationalization](./docs/en/I18n.md)
 
 ### Plugin
